@@ -1,0 +1,45 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+GET		/makeOriginalStyle						Application.makeOriginalStyle
+
+
+GET		/createStyle							Application.createStyleInDatabase
+
+POST	/createStyle							Application.postCreateStyleInDatabase
+
+GET		/returnStyle							Application.returnSLD
+
+
+GET		/updateRule								Application.updateRule
+
+
+GET		/getColumnNames							Application.getColumnNames
+
+
+GET		/getLayers								Application.getLayers
+
+
+GET 	/getLayer								Application.getLayer
+
+
+GET		/getStyles								Application.getSLDs
+
+
+GET		/updateSizeScale						Application.updateSizeScale
+
+GET		/updateColorScale						Application.updateColorScale
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
